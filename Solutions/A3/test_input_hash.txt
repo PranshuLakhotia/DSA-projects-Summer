@@ -1,0 +1,66 @@
+int main(){
+    Chaining obj;
+    obj.createAccount("CDAD7786825_7990768648", 648);
+    obj.createAccount("DCDA7547234_9919615552", 552);
+    obj.createAccount("AACB1850545_7974534788", 788);
+    std::cout<<obj.databaseSize()<<"\n";
+    obj.createAccount("CDBD5250777_1124276711", 711);
+    obj.createAccount("ABCB8377155_0656808575", 575);
+    std::vector<int> vec = obj.getTopK(1);
+    for (int i = 0; i < vec.size(); i++){
+        std::cout<<vec[i]<<" ";
+    }
+    std::cout<<"\n";
+    obj.createAccount("CDDC3792028_3313680038", 38);
+    obj.createAccount("CBBA9574444_7470182321", 321);
+    obj.createAccount("DBCC4334636_8057544188", 188);
+    vec = obj.getTopK(3);
+    for (int i = 0; i < vec.size(); i++){
+        std::cout<<vec[i]<<" ";
+    }
+    std::cout<<"\n";
+    obj.createAccount("BABD5741078_5109455304",304);
+    obj.createAccount("BCBA7529510_0817878868", 868);
+    std::cout<<obj.databaseSize()<<"\n";
+    vec = obj.getTopK(1);
+    for (int i = 0; i < vec.size(); i++){
+        std::cout<<vec[i]<<" ";
+    }
+    std::cout<<"\n";
+    obj.addTransaction("BCBA7529510_0817878868", -860);
+    std::cout<<obj.getBalance("BCBA7529510_0817878868")<<"\n";
+    vec = obj.getTopK(1);
+    for (int i = 0; i < vec.size(); i++){
+        std::cout<<vec[i]<<" ";
+    }
+    std::cout<<"\n";
+    obj.addTransaction("DCDA7547234_9919615552", 592);
+    vec = obj.getTopK(5);
+    for (int i = 0; i < vec.size(); i++){
+        std::cout<<vec[i]<<" ";
+    }
+    std::cout<<"\n";
+    std::cout<<obj.deleteAccount("DCDA7547234_9919615552")<<"\n";
+    vec = obj.getTopK(4);
+    for (int i = 0; i < vec.size(); i++){
+        std::cout<<vec[i]<<" ";
+    }
+    std::cout<<"\n";
+    std::cout<<obj.databaseSize()<<"\n";
+    return 0;
+}
+
+
+
+int main(){
+    Chaining obj;
+    obj.createAccount("ABCD1234567_1234567890", 100);
+    obj.createAccount("EFGH9876543_9876543210", 200);
+    std::cout<<obj.getBalance("ABCD1234567_1234567890")<<"\n";
+    obj.addTransaction("ABCD1234567_1234567890", 50);
+    std::cout<<obj.getBalance("ABCD1234567_1234567890")<<"\n";
+    std::cout<<obj.doesExist("IJKL5432109_5432109876")<<"\n";
+    std::cout<<obj.deleteAccount("EFGH9876543_9876543210")<<"\n";
+    std::cout<<obj.databaseSize()<<"\n";
+    return 0;
+}
